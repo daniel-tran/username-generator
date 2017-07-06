@@ -82,41 +82,6 @@ int wordPrint(word* current){
 
 int main(){
 
-	/*
-	char* vad = (char*) malloc(20);
-	strcpy(vad, "ruddy");
-	free(vad);
-	*/
-
-	/*
-	word head;
-	word* current = &head;
-	char* input = "lw";
-
-	for (int i = 0; i < strlen(input); i++){
-
-		current->data = construct(input[i]);
-		current->isTail = false;
-
-		word newData;
-		current->next = &newData;
-		current = &newData;
-	}
-
-	current->isTail = true;
-	printf("%s %s", current->data, current->next->data);
-
-	printf("%i %i %i", head.isTail, head.next->isTail, head.next->next->isTail);
-
-
-	word* currento = &head;
-	while (!currento->isTail){//for (int i = 0; i < strlen(input); i++){//while (currento->data){
-		printf("%s", currento->data);
-		currento = currento->next;
-	}//*/
-	//wordPrint(&head);
-	//printf("%s %s %s", head.data, head.next->data, current->data);
-
 	char* data = "lwl";
 	const int wordCount = strlen(data);
 	word* words = (word*) malloc(wordCount * sizeof(word));
