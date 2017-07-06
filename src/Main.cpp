@@ -17,19 +17,6 @@ struct word {
 	bool isTail;
 };
 
-/*
-word construct(char* code, int codeInc){
-	if (code[codeInc] == '\0'){
-		word t;
-		return t;
-	}else{
-		word info;
-		info.data = "KARG ";
-		info.next = construct(code, codeInc + 1);
-		return info;
-	}
-}*/
-
 char* provideWord(){
 
 	char* output;
