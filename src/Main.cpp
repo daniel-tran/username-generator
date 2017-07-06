@@ -55,18 +55,6 @@ char* construct(char type){
 	return output;
 }
 
-int wordPrint(word* current){
-
-	if (current){
-		printf("%s", current->data);
-		wordPrint(current->next);
-	}else{
-		printf("\n");
-	}
-
-	return 0;
-}
-
 int main(){
 
 	char* data = "lwl";
