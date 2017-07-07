@@ -2,62 +2,19 @@
  * Main.cpp
  *
  *  Created on: 24 Jun 2017
- *      Author: Administrator
+ *      Author: Daniel Tran
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-using namespace std;
 
-struct word {
-	char* data;
-	word* next;
-	bool isTail;
-};
-
-char* provideWord(){
-
-	char* output;
-	int index = rand() % 100;
-
-	switch (index){
-	case 0: output = "Axiom";
-	default: output = "Zanguard";
-	}
-
-	return output;
-}
-
-char* provideLowercaseWord(){
-	char* rawWord = provideWord();
-
-	for (int i = 0; i < strlen(rawWord); i++){
-		rawWord[i] = tolower(rawWord[i]);
-	}
-
-	return rawWord;
-}
-
-
-
-char* construct(char type){
-
-	char* output;
-
-	switch (type){
-	case 'w': return provideWord();
-
-	default: return "Solosis";
-	}
-
-	return output;
-}
+#include "Wordtypes.h"
 
 int main(){
-
 	char* data = "lwl";
+
 	const int wordCount = strlen(data);
 	word* words = (word*) malloc(wordCount * sizeof(word));
 
