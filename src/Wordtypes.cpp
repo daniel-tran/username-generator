@@ -11,6 +11,7 @@
 #include <ctype.h>
 
 #include "Wordtypes.h"
+using namespace std;
 
 struct word;
 
@@ -28,13 +29,15 @@ char* provideWord(){
 }
 
 char* provideLowercaseWord(){
-	char* rawWord = provideWord();
+	char* output;
+	int index = rand() % 100;
 
-	for (unsigned int i = 0; i < strlen(rawWord); i++){
-		rawWord[i] = tolower(rawWord[i]);
+	switch (index){
+	case 0: output = "anchor"; break;
+	default: output = "zabaglione";
 	}
 
-	return rawWord;
+	return output;
 }
 
 
@@ -45,6 +48,7 @@ char* construct(char type){
 
 	switch (type){
 	case 'w': return provideWord();
+	case 'l': return provideLowercaseWord();
 
 	default: return "Solosis";
 	}

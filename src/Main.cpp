@@ -13,7 +13,8 @@
 #include "Wordtypes.h"
 
 int main(){
-	char* data = "lwl";
+
+	char* data = "lwz";
 
 	const int wordCount = strlen(data);
 	word* words = (word*) malloc(wordCount * sizeof(word));
