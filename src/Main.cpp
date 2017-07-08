@@ -11,8 +11,12 @@
 #include <ctype.h>
 
 #include "Wordtypes.h"
+#include "UnitTests.h"
 
 int main(){
+
+	Unit unit;
+	unit.testAll();
 
 	char* data = "lwz";
 
