@@ -34,6 +34,8 @@ int Unit::testBasicData(){
 
 	printf("Construct basic separator:        %s \n", construct('S'));
 
+	printf("Construct punctuation character:  %s \n", construct('p'));
+
 	return 0;
 }
 

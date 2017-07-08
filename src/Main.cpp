@@ -18,7 +18,7 @@ int main(){
 	Unit unit;
 	unit.testAll();
 
-	char* data = "lwz";
+	char* data = "wWz";
 
 	const int wordCount = strlen(data);
 	word* words = (word*) malloc(wordCount * sizeof(word));
