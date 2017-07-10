@@ -20,7 +20,7 @@ int main(){
 	unit.testAll();
 	//*/
 
-	char* data = "wWl";
+	char* data = "wWl#";
 
 	const int wordCount = strlen(data);
 	word* words = (word*) malloc(wordCount * sizeof(word));
