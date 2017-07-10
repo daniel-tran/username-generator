@@ -16,13 +16,17 @@ int Unit::testBasicData(){
 
 	printf("\n Testing construction of basic data \n");
 
-	printf("Construct lowercase word:         %s \n", construct('w'));
+	char* test = construct('w');
+	printf("Construct lowercase word:         %s \n", test);
+	free(test);
 
-	char* test = construct('l');
+	test = construct('l');
 	printf("Construct lowercase letter:       %s \n", test);
 	free(test);
 
-	printf("Construct uppercase word:         %s \n", construct('W'));
+	test = construct('W');
+	printf("Construct uppercase word:         %s \n", test);
+	free(test);
 
 	test = construct('L');
 	printf("Construct uppercase letter:       %s \n", test);
@@ -57,17 +61,29 @@ int Unit::testSemanticData(){
 
 	printf("\n Testing construction of semantic data \n");
 
-	printf("Construct lowercase noun:         %s \n", construct('n'));
+	char* test = construct('n');
+	printf("Construct lowercase noun:         %s \n", test);
+	free(test);
 
-	printf("Construct uppercase noun:         %s \n", construct('N'));
+	test = construct('N');
+	printf("Construct uppercase noun:         %s \n", test);
+	free(test);
 
-	printf("Construct lowercase verb:         %s \n", construct('v'));
+	test = construct('v');
+	printf("Construct lowercase verb:         %s \n", test);
+	free(test);
 
-	printf("Construct uppercase verb:         %s \n", construct('V'));
+	test = construct('V');
+	printf("Construct uppercase verb:         %s \n", test);
+	free(test);
 
-	printf("Construct lowercase adjective:    %s \n", construct('a'));
+	test = construct('a');
+	printf("Construct lowercase adjective:    %s \n", test);
+	free(test);
 
-	printf("Construct uppercase adjective:    %s \n", construct('A'));
+	test = construct('A');
+	printf("Construct uppercase adjective:    %s \n", test);
+	free(test);
 
 	return 0;
 }
@@ -76,9 +92,13 @@ int Unit::testEdgeCaseData(){
 
 	printf("\n Test edge case data               \n");
 
-	printf("Construct non-existent word type: %s \n", construct('@'));
+	char* test = construct('@');
+	printf("Construct non-existent word type: %s \n", test);
+	free(test);
 
-	printf("Construct blank input (ASCII):    %s \n", construct(0));
+	test = construct(0);
+	printf("Construct blank input (ASCII):    %s \n", test);
+	free(test);
 
 	return 0;
 }
