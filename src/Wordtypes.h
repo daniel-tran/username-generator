@@ -10,6 +10,7 @@
 
 struct word {
 	char* data;
+	char type;
 };
 
 char* provideLowercaseWord();

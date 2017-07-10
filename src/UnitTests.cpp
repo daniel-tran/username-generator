@@ -18,23 +18,37 @@ int Unit::testBasicData(){
 
 	printf("Construct lowercase word:         %s \n", construct('w'));
 
-	printf("Construct lowercase letter:       %s \n", construct('l'));
+	char* test = construct('l');
+	printf("Construct lowercase letter:       %s \n", test);
+	free(test);
 
 	printf("Construct uppercase word:         %s \n", construct('W'));
 
-	printf("Construct uppercase letter:       %s \n", construct('L'));
+	test = construct('L');
+	printf("Construct uppercase letter:       %s \n", test);
+	free(test);
 
-	printf("Construct random letter:          %s \n", construct('r'));
+	test = construct('r');
+	printf("Construct random letter:          %s \n", test);
+	free(test);
 
-	printf("Construct random word:            %s \n", construct('R'));
+	test = construct('R');
+	printf("Construct random word:            %s \n", test);
+	free(test);
 
-	printf("Construct number:                 %s \n", construct('#'));
+	test = construct('#');
+	printf("Construct number:                 %s \n", test);
+	free(test);
 
 	printf("Construct space:                  %s \n", construct('s'));
 
-	printf("Construct basic separator:        %s \n", construct('S'));
+	test = construct('S');
+	printf("Construct basic separator:        %s \n", test);
+	free(test);
 
-	printf("Construct punctuation character:  %s \n", construct('p'));
+	test = construct('p');
+	printf("Construct punctuation character:  %s \n", test);
+	free(test);
 
 	return 0;
 }

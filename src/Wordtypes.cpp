@@ -11,12 +11,15 @@
 #include <ctype.h>
 
 #include "Wordtypes.h"
-using namespace std;
 
 struct word;
 
 int randomIndex(){
 	return rand() % 100;
+}
+
+int randomLetterIndex(){
+	return rand() % 26;
 }
 
 //An unofficial method, it *might* be included eventually.
@@ -57,6 +60,21 @@ char* provideUppercaseWord(){
 	return output;
 }
 
+char* provideLowercaseLetter(){
+	char* out = (char*)malloc(sizeof(char)*2);
+	out[0] = 'a'+randomLetterIndex();
+	out[1] = '\0';
+
+	return out;
+}
+
+char* provideUppercaseLetter(){
+	char* out = provideLowercaseLetter();
+	out[0] = toupper(out[0]);
+
+	return out;
+}
+
 
 
 char* construct(char type){
@@ -66,6 +84,8 @@ char* construct(char type){
 	switch (type){
 	case 'w': return provideLowercaseWord();
 	case 'W': return provideUppercaseWord();
+	case 'l': return provideLowercaseLetter();
+	case 'L': return provideUppercaseLetter();
 
 	default: return "Solosis";
 	}
