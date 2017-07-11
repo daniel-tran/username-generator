@@ -11,24 +11,11 @@
 #include <ctype.h>
 
 #include "Wordtypes.h"
+#include "Random.h"
 
 struct word;
 
-int randomIndex(){
-	return rand() % 100;
-}
 
-int randomLetterIndex(){
-	return rand() % 26;
-}
-
-int randomSingleDigit(){
-	return rand() % 10;
-}
-
-char randomLetter(){
-	return (' ' + ( rand() % ('~' - ' ') ) );
-}
 
 char* provideUppercase(char* output){
 	//char* output = provideLowercaseNoun();
@@ -159,11 +146,9 @@ char* provideUppercaseWord(){
 }
 
 char* provideLowercaseLetter(){
-	char* out = (char*)malloc(sizeof(char)*2);
-	out[0] = 'a'+randomLetterIndex();
-	out[1] = '\0';
 
-	return out;
+	char letter = 'a'+randomLetterIndex();
+	return provideException(letter);
 }
 
 char* provideUppercaseLetter(){
