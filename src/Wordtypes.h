@@ -13,8 +13,10 @@ struct word {
 	char type;
 };
 
-char* provideLowercaseWord();
-char* provideUppercaseWord();
+char* provideUppercase(char* output);
+char* provideData(char* data);
+char* provideException(char input);
+
 char* construct(char type);
 
 #endif /* WORDTYPES_H_ */
