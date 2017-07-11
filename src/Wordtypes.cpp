@@ -40,6 +40,15 @@ char* provideUppercase(char* output){
 	return output;
 }
 
+char* provideData(char* data){
+	char* output = (char*)malloc( (sizeof(char)*strlen(data)) +1);
+	strcpy(output, data);
+
+	output[strlen(data)] = '\0';
+
+	return output;
+}
+
 char* provideException(char input){
 	char* output = (char*)malloc(sizeof(char)*2);
 
@@ -57,12 +66,7 @@ char* provideLowercaseNoun(){
 	default: data = "zoo";
 	}
 
-	char* output = (char*)malloc( (sizeof(char)*strlen(data)) +1);
-	strcpy(output, data);
-
-	output[strlen(data)] = '\0';
-
-	return output;
+	return provideData(data);
 }
 
 char* provideUppercaseNoun(){
@@ -82,12 +86,7 @@ char* provideLowercaseVerb(){
 	default: data = "zap";
 	}
 
-	char* output = (char*)malloc( (sizeof(char)*strlen(data)) +1);
-	strcpy(output, data);
-
-	output[strlen(data)] = '\0';
-
-	return output;
+	return provideData(data);
 }
 
 char* provideUppercaseVerb(){
@@ -107,12 +106,7 @@ char* provideLowercaseAdjective(){
 	default: data = "zealous";
 	}
 
-	char* output = (char*)malloc( (sizeof(char)*strlen(data)) +1);
-	strcpy(output, data);
-
-	output[strlen(data)] = '\0';
-
-	return output;
+	return provideData(data);
 }
 
 char* provideUppercaseAdjective(){
@@ -233,11 +227,8 @@ char* providePunctuation(){
 }
 
 char* provideRandomLetter(){
-	char* output = (char*)malloc(sizeof(char)*2);
-	output[0] = randomLetter();
-	output[1] = '\0';
 
-	return output;
+	return provideException(randomLetter());
 }
 
 char* provideRandomWord(){
