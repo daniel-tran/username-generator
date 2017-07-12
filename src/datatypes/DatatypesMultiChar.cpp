@@ -8,7 +8,7 @@
 #include "stdlib.h"
 #include "string.h"
 
-#include "Wordtypes.h"
+#include "../Wordtypes.h"
 #include "Random.h"
 #include "DatatypesMultiChar.h"
 
@@ -73,30 +73,24 @@ char* provideUppercaseAdjective(){
 }
 
 char* provideLowercaseWord(){
-	char* output;
+	char* data;
 	int index = randomIndex();
 
 	switch (index){
-	case 0: output = "anchor"; break;
-	default: output = "zucchini";
+	case 0: data = "anchor"; break;
+	default: data = "zucchini";
 	}
 
-	return output;
+	return provideData(data);
 }
 
 char* provideUppercaseWord(){
-	char* output;
-	int index = randomIndex();
+	char* output = provideLowercaseWord();
 
-	switch (index){
-	case 0: output = "ASCOT"; break;
-	default: output = "ZOOM";
-	}
+	output = provideUppercase(output);
 
 	return output;
 }
-
-
 
 char* provideRandomWord(){
 

@@ -11,14 +11,13 @@
 #include <ctype.h>
 
 #include "Wordtypes.h"
-#include "Random.h"
-#include "DatatypesSingleChar.h"
-#include "DatatypesMultiChar.h"
+#include "datatypes/Random.h"
+#include "datatypes/DatatypesSingleChar.h"
+#include "datatypes/DatatypesMultiChar.h"
 
 struct word;
 
 char* provideUppercase(char* output){
-	//char* output = provideLowercaseNoun();
 
 	for (int i = 0; i < strlen(output); i++){
 		output[i] = toupper(output[i]);

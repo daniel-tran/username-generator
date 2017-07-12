@@ -9,7 +9,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "Wordtypes.h"
+#include "../Wordtypes.h"
 #include "Random.h"
 #include "DatatypesSingleChar.h"
 
