@@ -40,6 +40,10 @@ int Unit::testBasicData(){
 	printf("Construct random word:            %s \n", test);
 	free(test);
 
+	test = construct('P');
+	printf("Construct capitalized word:       %s \n", test);
+	free(test);
+
 	test = construct('#');
 	printf("Construct number:                 %s \n", test);
 	free(test);

@@ -22,4 +22,6 @@ char* provideUppercaseWord();
 
 char* provideRandomWord();
 
+char* provideCapitalisedWord();
+
 #endif /* DATATYPESMULTICHAR_H_ */

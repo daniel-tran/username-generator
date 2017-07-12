@@ -59,6 +59,7 @@ char* construct(char type){
 	case 's': return provideSpace();
 	case 'S': return provideSeparator();
 	case 'p': return providePunctuation();
+	case 'P': return provideCapitalisedWord();
 
 	case 'n': return provideLowercaseNoun();
 	case 'N': return provideUppercaseNoun();

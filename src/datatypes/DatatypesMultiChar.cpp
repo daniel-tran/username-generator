@@ -6,6 +6,7 @@
  */
 
 #include "stdlib.h"
+#include "ctype.h"
 #include "string.h"
 
 #include "../Wordtypes.h"
@@ -108,13 +109,9 @@ char* provideRandomWord(){
 //An unofficial method, it *might* be included eventually.
 char* provideCapitalisedWord(){
 
-	char* output;
-	int index = randomIndex();
+	char* output = provideLowercaseWord();
 
-	switch (index){
-	case 0: output = "Axiom"; break;
-	default: output = "Zanguard";
-	}
+	output[0] = toupper(output[0]);
 
 	return output;
 }
