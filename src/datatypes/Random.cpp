@@ -6,8 +6,15 @@
  */
 
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "Random.h"
+
+int randomSeed(){
+	srand(getpid());
+
+	return 0;
+}
 
 int randomIndex(){
 	return rand() % 100;

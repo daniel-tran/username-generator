@@ -11,6 +11,7 @@
 #include <ctype.h>
 
 #include "Wordtypes.h"
+#include "datatypes/Random.h"
 #include "UnitTests.h"
 
 int main(){
@@ -19,6 +20,8 @@ int main(){
 	Unit unit;
 	unit.testAll();
 	//*/
+
+	randomSeed();
 
 	char* data = "wWl#";
 
