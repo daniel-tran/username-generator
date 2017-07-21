@@ -1,4 +1,4 @@
-# Username Generator (Still in Development)
+# Username Generator
 A program that generates usernames. Made using C++ (or was it C?).
 
 ## What should the program do?

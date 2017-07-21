@@ -14,16 +14,21 @@
 #include "datatypes/Random.h"
 #include "UnitTests.h"
 
-int main(){
+int main(int argc, char* argv[]){
 
-	//*
+	/*
 	Unit unit;
 	unit.testAll();
 	//*/
 
 	randomSeed();
 
-	char* data = "wWl#";
+	char* data;
+	if (argc == 1){
+		data = "wW1#";
+	}else{
+		data = argv[1];
+	}
 
 	const int wordCount = strlen(data);
 	word* words = wordtypeInitialise(data);
