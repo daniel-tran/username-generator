@@ -13,6 +13,8 @@ public:
 	int testBasicData();
 	int testSemanticData();
 	int testEdgeCaseData();
+	int testMainData();
+	int testMainDataStressTest();
 	int testAll();
 };
 

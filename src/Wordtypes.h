@@ -13,6 +13,10 @@ struct word {
 	char type;
 };
 
+word* wordtypeInitialise(char* data);
+int wordtypePrint(word* words, int wordCount);
+int wordtypeFree(word* words, int wordCount);
+
 char* provideUppercase(char* output);
 char* provideData(char* data);
 char* provideException(char input);

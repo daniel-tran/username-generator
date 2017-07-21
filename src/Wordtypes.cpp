@@ -17,9 +17,46 @@
 
 struct word;
 
+word* wordtypeInitialise(char* data){
+
+	const int wordCount = strlen(data);
+	word* words = (word*) malloc(wordCount * sizeof(word));
+
+	for (int i = 0; i < wordCount; i++){
+		words[i].data = construct(data[i]);
+		words[i].type = data[i];
+	}
+
+	return words;
+}
+
+int wordtypePrint(word* words, int wordCount){
+	for (int c = 0; c < wordCount; c++){
+		printf("%s", words[c].data);
+	}
+
+	return 0;
+}
+
+int wordtypeFree(word* words, int wordCount){
+	for (int k = 0; k < wordCount; k++){
+
+		words[k].data = NULL;
+		words[k].type = 0;
+
+		free(words[k].data);
+		free((char*)words[k].type);
+	}
+	free(words);
+
+	return 0;
+}
+
 char* provideUppercase(char* output){
 
-	for (int i = 0; i < strlen(output); i++){
+	const int length = strlen(output);
+
+	for (int i = 0; i < length; i++){
 		output[i] = toupper(output[i]);
 	}
 

@@ -26,22 +26,10 @@ int main(){
 	char* data = "wWl#";
 
 	const int wordCount = strlen(data);
-	word* words = (word*) malloc(wordCount * sizeof(word));
+	word* words = wordtypeInitialise(data);
 
-	for (int i = 0; i < wordCount; i++){
-		words[i].data = construct(data[i]);
-		words[i].type = data[i];
-	}
-
-	for (int c = 0; c < wordCount; c++){
-		printf("%s", words[c].data);
-	}
-
-	//Free up the stored strings and their primary memory allocations
-	for (int k = 0; k < wordCount; k++){
-		free(words[k].data);
-	}
-	free(words);
+	wordtypePrint(words, wordCount);
+	wordtypeFree(words, wordCount);
 
 	return 0;
 }

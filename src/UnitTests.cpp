@@ -107,6 +107,62 @@ int Unit::testEdgeCaseData(){
 	return 0;
 }
 
+int Unit::testMainData(){
+
+	printf("\n Test main methods in the generator \n");
+
+	word* test;
+
+	test = wordtypeInitialise("l");
+	printf("Construct data from input string: %s \n", test[0].data);
+	printf("Construct type from input string: %c \n", test[0].type);
+
+	printf("Print using the custom print method for word structures: ");
+	wordtypePrint(test, 1);
+	printf("\n");
+
+	wordtypeFree(test, 1);
+	printf("Free memory occupied by data:     %s \n", test[0].data);
+	printf("Free memory occupied by type:     %c \n", test[0].type);
+
+	return 0;
+}
+
+int Unit::testMainDataStressTest(){
+
+	printf("\n Test main methods with input of 100 items \n");
+
+	word* test;
+	char* input = "##############################################################################################################";
+	const int length = strlen(input);
+
+	test = wordtypeInitialise(input);
+
+	printf("Print using the custom print method for word structures: ");
+	wordtypePrint(test, length);
+	printf("\n");
+
+	printf("Print using the custom print method for 4 words: ");
+	wordtypePrint(test, 4);
+	printf("\n");
+
+	printf("Print using the custom print method for 0 words: ");
+	wordtypePrint(test, 0);
+	printf("\n");
+
+	printf("Print using the custom print method for -1 words: ");
+	wordtypePrint(test, -1);
+	printf("\n");
+
+	wordtypeFree(test, length);
+	for (int i = 0; i < length; i++){
+		printf("Free memory occupied by data:     %s \n", test[i].data);
+		printf("Free memory occupied by type:     %c \n", test[i].type);
+	}
+
+	return 0;
+}
+
 int Unit::testAll(){
 
 	testBasicData();
@@ -114,6 +170,10 @@ int Unit::testAll(){
 	testSemanticData();
 
 	testEdgeCaseData();
+
+	testMainData();
+
+	testMainDataStressTest();
 
 	printf("\n");
 
