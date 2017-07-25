@@ -28,6 +28,7 @@ int main(int argc, char* argv[]){
 
 	/*
 	//Unit tests are run from main; look into proper unit testing suites?
+	//This runs before randomSeed() to ensure consistent results when testing.
 	Unit unit;
 	unit.testAll();
 	return 0;
@@ -36,20 +37,23 @@ int main(int argc, char* argv[]){
 	//Ensure the printed output is not cached.
 	randomSeed();
 
+	const int idealArgs = 2;
 	char* data;
-	if (argc == 1){
+
+	//Test if the correct number of arguments have been supplied.
+	if (argc == idealArgs){
+
+		//Accept input when just 2 parameters are given.
+		data = argv[1];
+	}else if (argc < idealArgs){
 
 		//Use a preset string format when too few parameters are given.
 		data = "wW1#";
-	}else if (argc > 2){
+	}else{
 
 		//Exit when too many parameters are given.
 		printf("ERROR: Too many arguments supplied. Only 2 arguments are allowed. \n");
 		return 0;
-	}else{
-
-		//Accept input when just 2 parameters are given.
-		data = argv[1];
 	}
 
 	//Initialise the username as an array of words with a head pointer.
