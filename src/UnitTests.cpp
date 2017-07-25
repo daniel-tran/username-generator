@@ -3,6 +3,11 @@
  *
  *  Created on: 8 Jul 2017
  *      Author: Daniel Tran
+ *
+ *  These methods are used to test parts of the application through the
+ *  Unit class.
+ *  In the future, it might be worth looking deeper into Windows unit testing
+ *  suites and using them rather than these methods.
  */
 
 #include <stdio.h>
@@ -12,6 +17,9 @@
 #include "UnitTests.h"
 #include "Wordtypes.h"
 
+/*
+ * Test basic word creation using a given type character.
+ */
 int Unit::testBasicData(){
 
 	printf("\n Testing construction of basic data \n");
@@ -61,6 +69,9 @@ int Unit::testBasicData(){
 	return 0;
 }
 
+/*
+ * Test semantic word creation using a given type character.
+ */
 int Unit::testSemanticData(){
 
 	printf("\n Testing construction of semantic data \n");
@@ -92,6 +103,9 @@ int Unit::testSemanticData(){
 	return 0;
 }
 
+/*
+ * Test for edge case word creation, such as a non-matching input type.
+ */
 int Unit::testEdgeCaseData(){
 
 	printf("\n Test edge case data               \n");
@@ -107,6 +121,9 @@ int Unit::testEdgeCaseData(){
 	return 0;
 }
 
+/*
+ * Tests that the main application from Main.cpp works as intended.
+ */
 int Unit::testMainData(){
 
 	printf("\n Test main methods in the generator \n");
@@ -128,6 +145,10 @@ int Unit::testMainData(){
 	return 0;
 }
 
+/*
+ * Tests the application from a stress test and edge case perspective.
+ * Tests for printing are also included here.
+ */
 int Unit::testMainDataStressTest(){
 
 	printf("\n Test main methods with input of 100 items \n");
@@ -163,21 +184,18 @@ int Unit::testMainDataStressTest(){
 	return 0;
 }
 
+/*
+ * Runs all the tests available.
+ */
 int Unit::testAll(){
 
 	testBasicData();
-
 	testSemanticData();
-
 	testEdgeCaseData();
-
 	testMainData();
-
 	testMainDataStressTest();
 
 	printf("\n");
 
 	return 0;
 }
-
-

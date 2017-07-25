@@ -2,7 +2,11 @@
  * DatatypesMultiChar.cpp
  *
  *  Created on: 12 Jul 2017
- *      Author: Administrator
+ *      Author: Daniel Tran
+ *
+ *  This file contains methods used to produce data composed of multiple
+ *  characters. Some methods aim to provide words with semantic value,
+ *  namely those that produce nouns, verbs and adjectives.
  */
 
 #include "stdlib.h"
@@ -13,7 +17,11 @@
 #include "Random.h"
 #include "DatatypesMultiChar.h"
 
+/*
+ * Returns a lower case noun, with allocated memory.
+ */
 char* provideLowercaseNoun(){
+
 	char* data;
 	int index = randomIndex();
 
@@ -38,22 +46,30 @@ char* provideLowercaseNoun(){
 	case 18: data = "incense"; break;
 	case 19: data = "jelly"; break;
 	case 20: data = "jumper"; break;
-
 	default: data = "zoo";
 	}
 
 	return provideData(data);
 }
 
+/*
+ * Returns a upper case noun, with allocated memory.
+ */
 char* provideUppercaseNoun(){
+
 	char* output = provideLowercaseNoun();
 
+	//Word has allocated memory, so it can be upper cased.
 	output = provideUppercase(output);
 
 	return output;
 }
 
+/*
+ * Returns a lower case verb, with allocated memory.
+ */
 char* provideLowercaseVerb(){
+
 	char* data;
 	int index = randomIndex();
 
@@ -84,14 +100,22 @@ char* provideLowercaseVerb(){
 	return provideData(data);
 }
 
+/*
+ * Returns a upper case verb, with allocated memory.
+ */
 char* provideUppercaseVerb(){
+
 	char* output = provideLowercaseVerb();
 
+	//Word has allocated memory, so it can be upper cased.
 	output = provideUppercase(output);
 
 	return output;
 }
 
+/*
+ * Returns a lower case adjective, with allocated memory.
+ */
 char* provideLowercaseAdjective(){
 	char* data;
 	int index = randomIndex();
@@ -123,51 +147,98 @@ char* provideLowercaseAdjective(){
 	return provideData(data);
 }
 
+/*
+ * Returns a upper case adjective, with allocated memory.
+ */
 char* provideUppercaseAdjective(){
+
 	char* output = provideLowercaseAdjective();
 
+	//Word has allocated memory, so it can be upper cased.
 	output = provideUppercase(output);
 
 	return output;
 }
 
+/*
+ * Returns a lower case general word, with allocated memory.
+ */
 char* provideLowercaseWord(){
 
-	int index = randomIndex() % 3;
+	char* data;
+	int index = randomIndex();
 
 	switch (index){
-	case 0: return provideLowercaseNoun();
-	case 1: return provideLowercaseVerb();
-	case 2: return provideLowercaseAdjective();
-	default: return provideData("soap");
+	case 1: data = "amadeus"; break;
+	case 2: data = "andy"; break;
+	case 3: data = "ben"; break;
+	case 4: data = "blake"; break;
+	case 5: data = "carl"; break;
+	case 6: data = "cyrus"; break;
+	case 7: data = "dave"; break;
+	case 8: data = "doug"; break;
+	case 9: data = "eric"; break;
+	case 10: data = "eve"; break;
+	case 11: data = "finn"; break;
+	case 12: data = "fred"; break;
+	case 13: data = "gary"; break;
+	case 14: data = "gaz"; break;
+	case 15: data = "harry"; break;
+	case 16: data = "henry"; break;
+	case 17: data = "iggy"; break;
+	case 18: data = "igor"; break;
+	case 19: data = "jake"; break;
+	case 20: data = "jenny"; break;
+	default: data = "zack";
 	}
+
+	return provideData(data);
 }
 
+/*
+ * Returns a upper case general word, with allocated memory.
+ */
 char* provideUppercaseWord(){
 	char* output = provideLowercaseWord();
 
+	//Word has allocated memory, so it can be upper cased.
 	output = provideUppercase(output);
 
 	return output;
 }
 
+/*
+ * Returns a string of random printable characters from the ASCII table.
+ * The string's length ranges from 1 to 101 inclusive (with null terminator).
+ */
 char* provideRandomWord(){
 
+	//Determine the length of the data to produce.
 	int length = randomIndex();
-	char* output = (char*)malloc(sizeof(char)*length + 1);
 
+	//Allocate memory accordingly. +1 is for the null character.
+	char* output = (char*) malloc(sizeof(char)*length + 1);
+
+	//Allocate each character with some contents.
 	for (int i = 0; i < length; i++){
 		output[i] = randomLetter();
 	}
+
+	//Add null character at the end of the string.
 	output[length] = '\0';
 
 	return output;
 }
 
+/*
+ * Returns a general word with a capitalised letter.
+ * Initially implemented, since general words are usually names and such.
+ */
 char* provideCapitalisedWord(){
 
 	char* output = provideLowercaseWord();
 
+	//Only make the first character upper case.
 	output[0] = toupper(output[0]);
 
 	return output;
