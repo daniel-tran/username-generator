@@ -22,33 +22,22 @@
  */
 char* provideLowercaseNoun(){
 
-	char* data;
+	char* source[] = {
+			"asparagus", "axe",
+			"bacon", "bear",
+			"carrot", "celery",
+			"dog", "dynamite",
+			"eagle", "egg",
+			"fire", "fox",
+			"gas", "goat",
+			"ham", "head",
+			"ice", "incense",
+			"jelly", "jumper",
+			"zoo"
+	};
+
 	int index = randomIndex();
-
-	switch(index){
-	case 1: data = "asparagus"; break;
-	case 2: data = "axe"; break;
-	case 3: data = "bacon"; break;
-	case 4: data = "bear"; break;
-	case 5: data = "carrot"; break;
-	case 6: data = "celery"; break;
-	case 7: data = "dog"; break;
-	case 8: data = "dynamite"; break;
-	case 9: data = "eagle"; break;
-	case 10: data = "egg"; break;
-	case 11: data = "fire"; break;
-	case 12: data = "fox"; break;
-	case 13: data = "gas"; break;
-	case 14: data = "goat"; break;
-	case 15: data = "ham"; break;
-	case 16: data = "head"; break;
-	case 17: data = "ice"; break;
-	case 18: data = "incense"; break;
-	case 19: data = "jelly"; break;
-	case 20: data = "jumper"; break;
-	default: data = "zoo";
-	}
-
+	char* data = source[index];
 	return provideData(data);
 }
 
@@ -70,33 +59,22 @@ char* provideUppercaseNoun(){
  */
 char* provideLowercaseVerb(){
 
-	char* data;
+	char* source[] = {
+			"act", "add",
+			"belch", "burp",
+			"chop", "cut",
+			"dash", "dig",
+			"eat", "excel",
+			"feast", "floss",
+			"glow", "go",
+			"hit", "hover",
+			"implore", "invest",
+			"joust", "judge",
+			"zap"
+	};
+
 	int index = randomIndex();
-
-	switch(index){
-	case 1: data = "act"; break;
-	case 2: data = "add"; break;
-	case 3: data = "belch"; break;
-	case 4: data = "burp"; break;
-	case 5: data = "chop"; break;
-	case 6: data = "cut"; break;
-	case 7: data = "dash"; break;
-	case 8: data = "dig"; break;
-	case 9: data = "eat"; break;
-	case 10: data = "excel"; break;
-	case 11: data = "feast"; break;
-	case 12: data = "floss"; break;
-	case 13: data = "glow"; break;
-	case 14: data = "go"; break;
-	case 15: data = "hit"; break;
-	case 16: data = "hover"; break;
-	case 17: data = "implore"; break;
-	case 18: data = "invest"; break;
-	case 19: data = "joust"; break;
-	case 20: data = "judge"; break;
-	default: data = "zap";
-	}
-
+	char* data = source[index];
 	return provideData(data);
 }
 
@@ -117,33 +95,24 @@ char* provideUppercaseVerb(){
  * Returns a lower case adjective, with allocated memory.
  */
 char* provideLowercaseAdjective(){
-	char* data;
+
+	//TODO Make this a const to fix deprecation error, but also needs percolation to other areas too
+	char* source[] = {
+			"angular", "awkward"
+			"best", "bored",
+			"curly", "cute",
+			"dangerous", "dark",
+			"eerie", "exotic",
+			"fancy", "filthy",
+			"great", "greedy",
+			"handy", "hateful",
+			"instant", "intricate",
+			"jaunty", "jolly",
+			"zealous"
+	};
+
 	int index = randomIndex();
-
-	switch(index){
-	case 1: data = "angular"; break;
-	case 2: data = "awkward"; break;
-	case 3: data = "best"; break;
-	case 4: data = "bored"; break;
-	case 5: data = "curly"; break;
-	case 6: data = "cute"; break;
-	case 7: data = "dangerous"; break;
-	case 8: data = "dark"; break;
-	case 9: data = "eerie"; break;
-	case 10: data = "exotic"; break;
-	case 11: data = "fancy"; break;
-	case 12: data = "filthy"; break;
-	case 13: data = "great"; break;
-	case 14: data = "greedy"; break;
-	case 15: data = "handy"; break;
-	case 16: data = "hateful"; break;
-	case 17: data = "instant"; break;
-	case 18: data = "intricate"; break;
-	case 19: data = "jaunty"; break;
-	case 20: data = "jolly"; break;
-	default: data = "zealous";
-	}
-
+	char* data = source[index];
 	return provideData(data);
 }
 
@@ -165,33 +134,38 @@ char* provideUppercaseAdjective(){
  */
 char* provideLowercaseWord(){
 
-	char* data;
-	int index = randomIndex();
+	//TODO Make this a const to fix deprecation error, but also needs percolation to other areas too
+	char* source[] = {
+			"andrew", "andy",
+			"ben", "blake",
+			"carl", "cyrus",
+			"dave", "doug",
+			"eric", "eve",
+			"finn", "fred",
+			"gary", "gaz",
+			"harry", "henry",
+			"iggy", "igor",
+			"jake", "jenny",
+			"kaz", "ken",
+			"larry", "lenny",
+			"max", "mike",
+			"nick", "nicole",
+			"oscar", "otto",
+			"patrick", "peter",
+			"queen", "quentin",
+			"robert", "rose",
+			"sam", "sandy",
+			"tim", "tom",
+			"ulysses", "uppity",
+			"vance", "victor",
+			"wendy", "william",
+			"xavier", "xeno",
+			"yolande", "yuri",
+			"zack", "zippy"
+	};
 
-	switch (index){
-	case 1: data = "amadeus"; break;
-	case 2: data = "andy"; break;
-	case 3: data = "ben"; break;
-	case 4: data = "blake"; break;
-	case 5: data = "carl"; break;
-	case 6: data = "cyrus"; break;
-	case 7: data = "dave"; break;
-	case 8: data = "doug"; break;
-	case 9: data = "eric"; break;
-	case 10: data = "eve"; break;
-	case 11: data = "finn"; break;
-	case 12: data = "fred"; break;
-	case 13: data = "gary"; break;
-	case 14: data = "gaz"; break;
-	case 15: data = "harry"; break;
-	case 16: data = "henry"; break;
-	case 17: data = "iggy"; break;
-	case 18: data = "igor"; break;
-	case 19: data = "jake"; break;
-	case 20: data = "jenny"; break;
-	default: data = "zack";
-	}
-
+	int index = randomIndex() % 50;
+	char* data = source[index];
 	return provideData(data);
 }
 
